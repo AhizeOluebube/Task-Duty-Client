@@ -3,8 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom";
-// import taskDutyLogo from "../assets/images/taskDutylogo.png"
-// import avatar from "../assets/images/Ellipse 1.png"
+import logo from "../assets/images/logo.png"
+import avatar from "../assets/images/Group 7.png"
 
 
 const Navbar1 = () => {
@@ -12,7 +12,7 @@ const Navbar1 = () => {
     <Navbar expand="lg" className="border-bottom py-4">
       <Container>
        <Link to="/" className="text-black text-decoration-none fs-4 fw-bold d-flex align-items-center gap-3">
-       {/* <img src={taskDutyLogo} alt="" /> */}
+       <img src={logo} alt="" />
        <p className="m-0">TaskDuty</p>
        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -20,7 +20,7 @@ const Navbar1 = () => {
           <Nav className="me-auto me-lg-0 ms-lg-auto d-flex gap-3 align-items-center">
             <Link className="text-black text-decoration-none fw-semibold" to="/new">New Task</Link>
             <Link className="text-black text-decoration-none fw-semibold" to="/tasks">All Task</Link>
-            {/* <img src={avatar} alt="" /> */}
+            <img src={avatar} alt="" />
           </Nav>
         </Navbar.Collapse>
       </Container>

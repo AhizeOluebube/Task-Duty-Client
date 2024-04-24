@@ -46,21 +46,25 @@ const EditTask = () => {
     if (!token) {
       return setshowLoginModal(true);
     }
-    const { data } = await axiosInstance.patch(
-      `/api/task/${id}`,
-      {
-        title,
-        description,
-        tags,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
+    try {
+      const { data } = await axiosInstance.patch(
+        `/api/task/${id}`,
+        {
+          title,
+          description,
+          tags,
         },
-      }
-    );
-    console.log(data);
-    navigate("/tasks")
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(data);
+      navigate("/tasks");
+    } catch (error) {
+      toast.error(error?.response?.data?.message || "Something went wrong");
+    }
   };
 
   return (
